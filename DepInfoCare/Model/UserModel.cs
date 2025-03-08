@@ -13,6 +13,7 @@ namespace DepInfoCare.Model
         [Required]
         public string PasswordHash { get; set; }
 
+        [Required]
         public string Role { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
