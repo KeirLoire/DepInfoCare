@@ -20,6 +20,21 @@ namespace DepInfoCare.Pages.Facility
                     return NotFound();
             }
 
+            Breadcrumb = new Breadcrumb
+            {
+                Title = Facility != null 
+                    ? "Edit Facility"
+                    : "Add Facility",
+                Items = new()
+                {
+                    new BreadcrumbItem
+                    {
+                        Title = "Facilities",
+                        Url = "/facility"
+                    }
+                }
+            };
+
             return Page();
         }
 

@@ -1,9 +1,7 @@
 ﻿@page
 @model DepInfoCare.Pages.Facility.AddModel
 @{
-    ViewData["Title"] = Model.Facility != null 
-        ? $"Edit Facility - {Model.Facility.Name}"
-        : "Add Facility";
+    ViewData["Title"] = Model.Breadcrumb.Title;
 }
 
 <div class="wrapper">

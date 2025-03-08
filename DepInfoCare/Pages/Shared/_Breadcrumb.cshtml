@@ -1,0 +1,22 @@
+﻿@if (Model.Breadcrumb != null)
+{
+    <div class="wrapper">
+        <div class="breadcrumb">
+            <a class="breadcrumb__item" href="/">
+                <i class="bi bi-house-fill"></i>
+            </a>
+            @if (Model.Breadcrumb.Items != null)
+            {
+                @foreach (var item in Model.Breadcrumb.Items)
+                {
+                    <a class="breadcrumb__item" href="@item.Url">
+                        @item.Title
+                    </a>
+                }
+            }
+            <div class="breadcrumb__item">
+                @Model.Breadcrumb.Title
+            </div>
+        </div>
+    </div>
+}

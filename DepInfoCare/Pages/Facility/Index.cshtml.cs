@@ -14,6 +14,11 @@ namespace DepInfoCare.Pages.Facility
         {
             Facilities = await DepContext.Facilities.ToListAsync();
 
+            Breadcrumb = new Breadcrumb
+            {
+                Title = "Facilities"
+            };
+
             return Page();
         }
     }

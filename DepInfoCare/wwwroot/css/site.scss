@@ -7,6 +7,7 @@ $green: #2E7D32 !default;
 $light-green: #4CAF50 !default;
 $light-gray: #F4F4F4 !default;
 $light-gray-2: #EEE !default;
+$light-gray-3: #BBB !default;
 $red: #F44336 !default;
 $black: #000 !default;
 
@@ -130,6 +131,29 @@ $black: #000 !default;
     display: flex;
     margin-bottom: 10px;
     justify-content: center;
+}
+
+// ==================================================================
+// Breadcrumb
+// ==================================================================
+
+.breadcrumb {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.breadcrumb__item {
+    text-decoration: none;
+    color: $green;
+
+    &:hover {
+        color: $light-green;
+    }
+}
+
+.breadcrumb__item:not([href]) {
+    color: $light-gray-3;
 }
 
 // ==================================================================

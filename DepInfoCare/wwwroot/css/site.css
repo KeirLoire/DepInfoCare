@@ -95,6 +95,24 @@
   justify-content: center;
 }
 
+.breadcrumb {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.breadcrumb__item {
+  text-decoration: none;
+  color: #2E7D32;
+}
+.breadcrumb__item:hover {
+  color: #4CAF50;
+}
+
+.breadcrumb__item:not([href]) {
+  color: #BBB;
+}
+
 .home {
   text-align: center;
 }
