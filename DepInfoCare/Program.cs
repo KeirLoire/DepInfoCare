@@ -9,6 +9,7 @@ builder.Services.AddRazorPages()
     .AddRazorPagesOptions(options =>
     {
         options.Conventions.AddPageRoute("/Authentication/Login", "/login");
+        options.Conventions.AddPageRoute("/Authentication/Logout", "/logout");
     });
 
 builder.Services.AddDistributedMemoryCache();
