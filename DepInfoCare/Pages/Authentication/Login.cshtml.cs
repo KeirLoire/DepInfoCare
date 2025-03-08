@@ -21,12 +21,18 @@ namespace DepInfoCare.Pages.Authentication
                 .Users
                 .FirstOrDefaultAsync(u => u.Username == username);
 
+            if (user == null)
+            {
+                ViewData["Failed"] = true;
+                return Page();
+            }
+
             var passwordHasher = new PasswordHasher<UserModel>();
             var result = passwordHasher.VerifyHashedPassword(user, user.PasswordHash, password);
 
-            if (user == null || result == PasswordVerificationResult.Failed)
+            if (result == PasswordVerificationResult.Failed)
             {
-                ViewData["Message"] = "Login credentials are invalid.";
+                ViewData["Failed"] = true;
                 return Page();
             }
 

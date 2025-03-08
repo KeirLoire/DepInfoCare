@@ -6,6 +6,8 @@ $white: #FFF !default;
 $green: #2E7D32 !default;
 $light-green: #4CAF50 !default;
 $light-gray: #F4F4F4 !default;
+$light-gray-2: #EEE !default;
+$red: #F44336 !default;
 
 // ==================================================================
 // Navigation bar
@@ -51,7 +53,6 @@ $light-gray: #F4F4F4 !default;
 
 .body {
     overflow: hidden;
-    margin: 0 auto;
     min-height: 768px;
     background: $light-gray;
 }
@@ -66,6 +67,15 @@ $light-gray: #F4F4F4 !default;
     text-align: center;
     background: $green;
     color: $white;
+}
+
+// ==================================================================
+// Wrapper
+// ==================================================================
+
+.wrapper {
+    margin: 0 auto;
+    width: 600px;
 }
 
 // ==================================================================
@@ -141,4 +151,52 @@ $light-gray: #F4F4F4 !default;
     margin-bottom: 20px;
     font-weight: bold;
     font-size: 20px;
+}
+
+// ==================================================================
+// Login
+// ==================================================================
+
+.login {
+    padding: 30px;
+    margin-top: 60px;
+    text-align: center;
+    background: $white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.login__title {
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: $green;
+}
+
+.login__message {
+    color: $red;
+}
+
+.login__form__group {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.login__input {
+    padding: 10px 10px;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid $light-gray-2;
+}
+
+.login__button {
+    padding: 5px 30px;
+    background: $green;
+    color: $white;
+    border-radius: 10px;
+    border: none;
+    
+    &:hover {
+        background: $light-green;
+    }
 }
