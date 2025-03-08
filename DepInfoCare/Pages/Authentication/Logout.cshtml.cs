@@ -10,7 +10,7 @@ namespace DepInfoCare.Pages.Authentication
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 
-            return RedirectToPage("/Authentication/Login");
+            return Redirect("/");
         }
     }
 }

@@ -15,6 +15,7 @@ builder.Services
 
         // Facility
         options.Conventions.AddAreaPageRoute("Pages", "/Facility/Index", "/facility");
+        options.Conventions.AddAreaPageRoute("Pages", "/Facility/Add", "/facility/add");
     });
 
 builder.Services.AddDistributedMemoryCache();

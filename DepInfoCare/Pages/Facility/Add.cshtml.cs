@@ -29,7 +29,7 @@ namespace DepInfoCare.Pages.Facility
             DepContext.Facilities.Add(facility);
             await DepContext.SaveChangesAsync();
 
-            return RedirectToPage("/Facility/Index");
+            return Redirect("/facility");
         }
     }
 }
