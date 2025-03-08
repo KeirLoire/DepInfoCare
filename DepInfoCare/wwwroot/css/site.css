@@ -30,6 +30,7 @@
 }
 
 .body {
+  overflow: hidden;
   margin: 0 auto;
   min-height: 768px;
   background: #F4F4F4;
@@ -41,4 +42,73 @@
   text-align: center;
   background: #2E7D32;
   color: #FFF;
+}
+
+.home {
+  text-align: center;
+}
+
+.home__welcome {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.home__welcome__title {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 26px;
+  color: #2E7D32;
+}
+
+.home__welcome__description {
+  margin-bottom: 20px;
+}
+
+.home__welcome__button {
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+  color: #FFF;
+  background: #2E7D32;
+  border-radius: 10px;
+}
+.home__welcome__button:hover {
+  color: #FFF;
+  background: #4CAF50;
+}
+
+.home__cover-image {
+  margin-bottom: 60px;
+}
+.home__cover-image img {
+  width: 600px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.home__services {
+  margin-bottom: 60px;
+}
+
+.home__services__title {
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+.home__services__list {
+  margin: 0 50px;
+  display: flex;
+  gap: 20px;
+}
+
+.home__services__item {
+  padding: 50px 50px;
+  background: #FFF;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.home__services__item__title {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 20px;
 }

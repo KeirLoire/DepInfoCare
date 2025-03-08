@@ -50,6 +50,7 @@ $light-gray: #F4F4F4 !default;
 // ==================================================================
 
 .body {
+    overflow: hidden;
     margin: 0 auto;
     min-height: 768px;
     background: $light-gray;
@@ -65,4 +66,79 @@ $light-gray: #F4F4F4 !default;
     text-align: center;
     background: $green;
     color: $white;
+}
+
+// ==================================================================
+// Home
+// ==================================================================
+
+.home {
+    text-align: center;
+}
+
+.home__welcome {
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.home__welcome__title {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 26px;
+    color: $green;
+}
+
+.home__welcome__description {
+    margin-bottom: 20px;
+}
+
+.home__welcome__button {
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    color: $white;
+    background: $green;
+    border-radius: 10px;
+
+    &:hover {
+        color: $white;
+        background: $light-green;
+    }
+}
+
+.home__cover-image {
+    margin-bottom: 60px;
+
+    img {
+        width: 600px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.home__services {
+    margin-bottom: 60px;
+}
+
+.home__services__title {
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.home__services__list {
+    margin: 0 50px;
+    display: flex;
+    gap: 20px;
+}
+
+.home__services__item {
+    padding: 50px 50px;
+    background: $white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.home__services__item__title {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 20px;
 }
