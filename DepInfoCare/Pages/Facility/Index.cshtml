@@ -4,17 +4,35 @@
     ViewData["Title"] = "Facilities";
 }
 
-<h1>
-    Facilities
-</h1>
-
-<ul>
-    @foreach (var item in Model.Facilities)
-    {
-        <li>
-            <a href="/facility/@(item.Id)">@item.Name</a> | <a href="/facility/edit/@(item.Id)">Edit</a> | <a href="/facility/delete/@(item.Id)">Delete</a>
-        </li>
-    }
-</ul>
-
-<a href="/facility/add">Add Facility</a>
+<div class="wrapper">
+    <div class="container">
+        <h1 class="container__title">
+            Select a Facility
+        </h1>
+        <ul class="facilities__list">
+            @foreach (var item in Model.Facilities)
+            {
+                <li class="facilities__item">
+                    <a class="facilities__item__title" href="/facility/@(item.Id)">
+                        @item.Name
+                    </a>
+                    <div class="facilities__item__actions">
+                        <a class="facilities__item__button facilities__item__button--edit" href="/facility/edit/@(item.Id)">
+                            <i class="bi bi-hammer"></i>
+                            <span>Edit</span>
+                        </a>
+                        <a class="facilities__item__button facilities__item__button--delete" href="/facility/delete/@(item.Id)">
+                            <i class="bi bi-trash"></i>
+                            <span>
+                                Delete
+                            </span>
+                        </a>
+                    </div>
+                </li>
+            }
+        </ul>
+        <a class="facilities__button" href="/facility/add">
+            Add Facility
+        </a>
+    </div>
+</div>

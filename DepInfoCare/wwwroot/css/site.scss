@@ -8,10 +8,12 @@ $light-green: #4CAF50 !default;
 $light-gray: #F4F4F4 !default;
 $light-gray-2: #EEE !default;
 $red: #F44336 !default;
+$black: #000 !default;
 
 // ==================================================================
 // Navigation bar
 // ==================================================================
+
 .navbar {
     display: flex;
     flex-direction: column;
@@ -76,6 +78,39 @@ $red: #F44336 !default;
 .wrapper {
     margin: 0 auto;
     width: 600px;
+}
+
+// ==================================================================
+// Common
+// ==================================================================
+
+.container {
+    padding: 30px;
+    margin-top: 60px;
+    text-align: center;
+    background: $white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.container__title {
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: $green;
+}
+
+.button {
+    padding: 10px 30px;
+    text-decoration: none;
+    background: $green;
+    color: $white;
+    border-radius: 10px;
+    border: none;
+
+    &:hover {
+        color: $white;
+        background: $light-green;
+    }
 }
 
 // ==================================================================
@@ -157,21 +192,6 @@ $red: #F44336 !default;
 // Login
 // ==================================================================
 
-.login {
-    padding: 30px;
-    margin-top: 60px;
-    text-align: center;
-    background: $white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.login__title {
-    margin-bottom: 20px;
-    font-size: 30px;
-    color: $green;
-}
-
 .login__message {
     color: $red;
 }
@@ -190,13 +210,77 @@ $red: #F44336 !default;
 }
 
 .login__button {
-    padding: 5px 30px;
-    background: $green;
-    color: $white;
+    @extend .button;
+}
+
+// ==================================================================
+// Facility - Listing
+// ==================================================================
+
+.facilities__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+}
+
+.facilities__item {
+    display: flex;
+    gap: 5px;
+}
+
+.facilities__item__title {
+    width: 100%;
+    margin: 0;
+    padding: 10px 10px;
+    text-align: left;
+    text-decoration: none;
+    font-size: 20px;
+    color: $black;
     border-radius: 10px;
-    border: none;
-    
+    border: 2px solid $light-gray-2;
+
     &:hover {
+        color: $white;
         background: $light-green;
+
+        .facilities__item__title {
+            color: $white;
+        }
     }
+}
+
+.facilities__item__actions {
+    display: flex;
+    gap: 5px;
+}
+
+.facilities__item__button {
+    display: flex;
+    flex-direction: column;
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 2px solid $light-gray-2;
+    color: $white;
+
+    &:hover {
+        color: $white;
+        opacity: 0.8;
+    }
+}
+
+.facilities__item__button--edit {
+    background: $green;
+}
+
+.facilities__item__button--delete {
+    background: $red;
+}
+
+.facilities__button {
+    @extend .button;
 }
