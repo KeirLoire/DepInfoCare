@@ -164,12 +164,14 @@
 }
 
 .home__services__list {
-  margin: 0 50px;
   display: flex;
   gap: 20px;
+  margin: 0 50px;
+  justify-content: center;
 }
 
 .home__services__item {
+  flex: 1;
   padding: 50px 50px;
   background: #FFF;
   border-radius: 10px;
