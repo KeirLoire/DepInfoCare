@@ -6,52 +6,64 @@
     <title>@ViewData["Title"] - DepInfoCare</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/DepInfoCare.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">DepInfoCare</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-page="/Index">Home</a>
-                        </li>
-                        @if (User.Identity?.IsAuthenticated ?? false)
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" href="/facility">Facilities</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" href="/logout">Logout</a>
-                            </li>
-                        }
-                        else
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" href="/login">Login</a>
-                            </li>
-                        }
-                    </ul>
-                </div>
-            </div>
+        <nav class="navbar">
+            <a class="navbar__brand" href="/">
+                DEP Info Care
+            </a>
+            <ul class="navbar__list">
+                <li class="navbar__item">
+                    <a href="/Index">
+                        Home
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#">
+                        Services
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#">
+                        About
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#">
+                        Contact
+                    </a>
+                </li>
+                @if (User.Identity?.IsAuthenticated ?? false)
+                {
+                    <li class="navbar__item">
+                        <a href="/facility">
+                            Facilities
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="/logout">
+                            Logout
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li class="navbar__item">
+                        <a href="/login">
+                            Login
+                        </a>
+                    </li>
+                }
+            </ul>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    <main class="body" role="main">
+        @RenderBody()
+    </main>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - DepInfoCare - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
+    <footer class="footer">
+        &copy; 2025 DEP Info Care. All rights reserved.
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

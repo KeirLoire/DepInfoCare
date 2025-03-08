@@ -1,21 +1,44 @@
-﻿html {
-  font-size: 14px;
+﻿.navbar {
+  display: flex;
+  flex-direction: column;
+  background: #2E7D32;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+.navbar__brand {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 25px;
+  color: #FFF;
 }
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+.navbar__brand:hover {
+  color: #FFF;
 }
 
-body {
-  margin-bottom: 60px;
+.navbar__list {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+}
+
+.navbar__item a {
+  text-decoration: none;
+  color: #FFF;
+}
+.navbar__item a:hover {
+  color: #4CAF50;
+}
+
+.body {
+  margin: 0 auto;
+  min-height: 768px;
+  background: #F4F4F4;
+}
+
+.footer {
+  margin: 0 auto;
+  padding: 25px 0;
+  text-align: center;
+  background: #2E7D32;
+  color: #FFF;
 }
