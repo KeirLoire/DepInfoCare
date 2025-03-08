@@ -6,14 +6,14 @@
 
 <div class="wrapper">
     <div class="container">
-        <h1 class="container__title">
+        <div class="container__title">
             Login
-        </h1>
+        </div>
         @if (ViewData["Failed"] != null)
         {
-            <p class="login__message">
+            <div class="container__message">
                 Invalid login credentials
-            </p>
+            </div>
         }
         <form class="login__form" method="post">
             <div class="login__form__group">
@@ -22,7 +22,9 @@
             <div class="login__form__group">
                 <input class="login__input"  type="password" name="password" placeholder="Password" required />
             </div>
-            <button class="login__button" type="submit">Login</button>
+            <button class="login__button" type="submit">
+                Login
+            </button>
         </form>
     </div>
 </div>

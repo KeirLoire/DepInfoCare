@@ -59,11 +59,17 @@
 
 .container__title {
   margin-bottom: 20px;
+  font-weight: bold;
   font-size: 30px;
   color: #2E7D32;
 }
 
-.button, .facilities__button, .login__button {
+.container__message {
+  margin-bottom: 20px;
+  color: #F44336;
+}
+
+.button, .facility__button, .facilities__button, .login__button {
   padding: 10px 30px;
   text-decoration: none;
   background: #2E7D32;
@@ -71,9 +77,22 @@
   border-radius: 10px;
   border: none;
 }
-.button:hover, .facilities__button:hover, .login__button:hover {
+.button:hover, .facility__button:hover, .facilities__button:hover, .login__button:hover {
   color: #FFF;
   background: #4CAF50;
+}
+
+.input, .facility__input, .login__input {
+  padding: 10px 10px;
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #EEE;
+}
+
+.form__group, .facility__form__group, .login__form__group {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: center;
 }
 
 .home {
@@ -143,23 +162,6 @@
   margin-bottom: 20px;
   font-weight: bold;
   font-size: 20px;
-}
-
-.login__message {
-  color: #F44336;
-}
-
-.login__form__group {
-  display: flex;
-  margin-bottom: 10px;
-  justify-content: center;
-}
-
-.login__input {
-  padding: 10px 10px;
-  width: 100%;
-  border-radius: 10px;
-  border: 2px solid #EEE;
 }
 
 .facilities__list {

@@ -95,8 +95,14 @@ $black: #000 !default;
 
 .container__title {
     margin-bottom: 20px;
+    font-weight: bold;
     font-size: 30px;
     color: $green;
+}
+
+.container__message {
+    margin-bottom: 20px;
+    color: $red;
 }
 
 .button {
@@ -111,6 +117,19 @@ $black: #000 !default;
         color: $white;
         background: $light-green;
     }
+}
+
+.input {
+    padding: 10px 10px;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid $light-gray-2;
+}
+
+.form__group {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: center;
 }
 
 // ==================================================================
@@ -192,21 +211,12 @@ $black: #000 !default;
 // Login
 // ==================================================================
 
-.login__message {
-    color: $red;
-}
-
 .login__form__group {
-    display: flex;
-    margin-bottom: 10px;
-    justify-content: center;
+    @extend .form__group;
 }
 
 .login__input {
-    padding: 10px 10px;
-    width: 100%;
-    border-radius: 10px;
-    border: 2px solid $light-gray-2;
+    @extend .input;
 }
 
 .login__button {
@@ -282,5 +292,21 @@ $black: #000 !default;
 }
 
 .facilities__button {
+    @extend .button;
+}
+
+// ==================================================================
+// Facility - Add/Edit Form
+// ==================================================================
+
+.facility__form__group {
+    @extend .form__group;
+}
+
+.facility__input {
+    @extend .input;
+}
+
+.facility__button {
     @extend .button;
 }

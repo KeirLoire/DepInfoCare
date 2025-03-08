@@ -2,38 +2,31 @@
 @model DepInfoCare.Pages.Facility.AddModel
 @{
     ViewData["Title"] = Model.Facility != null 
-        ? "Edit Facility" 
+        ? $"Edit Facility - {Model.Facility.Name}"
         : "Add Facility";
 }
 
-@if (ViewData["Message"] != null)
-{
-    <div>
-        @ViewData["Message"]
+<div class="wrapper">
+    <div class="container">
+        <div class="container__title">
+            @ViewData["Title"]
+        </div>
+        @if (ViewData["Failed"] != null)
+        {
+            <div class="container__message">
+                Facility already exists
+            </div>
+        }
+        <form class="facility__form" method="post">
+            <div class="facility__form__group">
+                <input class="input" type="text" name="name" placeholder="Name" value="@(Model.Facility != null ? Model.Facility.Name : null)" required />
+            </div>
+            <div class="facility__form__group">
+                <input class="input" type="text" name="address" placeholder="Address" value="@(Model.Facility != null ? Model.Facility.Address : null)" />
+            </div>
+            <button class="facility__button" type="submit">
+                Submit
+            </button>
+        </form>
     </div>
-}
-
-@if (Model.Facility != null)
-{
-    <h1>
-        Edit Facility - @Model.Facility.Name
-    </h1>
-}
-else
-{
-    <h1>
-        Add Facility
-    </h1>
-}
-
-<form method="post">
-    <div>
-        <label>Name: </label>
-        <input type="text" name="name" value="@(Model.Facility != null ? Model.Facility.Name : null)" required />
-    </div>
-    <div>
-        <label>Address: </label>
-        <input type="text" name="address" value="@(Model.Facility != null ? Model.Facility.Address : null)" />
-    </div>
-    <button type="submit">Submit</button>
-</form>
+</div>
