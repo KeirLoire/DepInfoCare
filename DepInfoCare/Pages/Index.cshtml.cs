@@ -1,20 +1,14 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace DepInfoCare.Pages
 {
-    public class IndexModel : PageModel
+    [Authorize]
+    public class IndexModel : PageModelBase
     {
-        private readonly ILogger<IndexModel> _logger;
-
-        public IndexModel(ILogger<IndexModel> logger)
+        public IActionResult OnGet()
         {
-            _logger = logger;
-        }
-
-        public void OnGet()
-        {
-
+            return Page();
         }
     }
 }
