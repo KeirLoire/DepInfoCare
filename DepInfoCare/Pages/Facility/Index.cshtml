@@ -1,4 +1,4 @@
-@page
+﻿@page
 @model DepInfoCare.Pages.Facility.IndexModel
 @{
     ViewData["Title"] = "Facilities";
@@ -12,7 +12,7 @@
     @foreach (var item in Model.Facilities)
     {
         <li>
-            <a href="#">@item.Name</a>
+            <a href="#">@item.Name</a> | <a href="/facility/edit/@(item.Id)">Edit</a>
         </li>
     }
 </ul>
