@@ -1,0 +1,43 @@
+﻿@page
+@model DepInfoCare.Pages.Patient.AddModel
+@{
+    ViewData["Title"] = $"{Model.Facility.Name} - Add Patient";
+}
+
+<h1>
+    @(Model.Facility.Name) - Add Patient
+</h1>
+
+<form method="post" enctype="multipart/form-data">
+    <div>
+        <label>First Name: </label>
+        <input asp-for="FormData.FirstName" type="text" />
+        <span asp-validation-for="FormData.FirstName"></span>
+    </div>
+    <div>
+        <label>Middle Name: </label>
+        <input asp-for="FormData.MiddleName" type="text" />
+        <span asp-validation-for="FormData.MiddleName"></span>
+    </div>
+    <div>
+        <label>Last Name: </label>
+        <input asp-for="FormData.LastName" type="text" />
+        <span asp-validation-for="FormData.LastName"></span>
+    </div>
+    <div>
+        <label>Suffix: </label>
+        <input asp-for="FormData.Suffix" type="text" />
+        <span asp-validation-for="FormData.Suffix"></span>
+    </div>
+    <div>
+        <label>Room: </label>
+        <input asp-for="FormData.Room" type="text" />
+        <span asp-validation-for="FormData.Room"></span>
+    </div>
+    <div>
+        <label>Image: </label>
+        <input asp-for="FormData.ImageFile" type="file" accept="image/*" />
+        <span asp-validation-for="FormData.ImageFile"></span>
+    </div>
+    <button type="submit">Submit</button>
+</form>

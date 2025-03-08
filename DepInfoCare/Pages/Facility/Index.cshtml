@@ -12,7 +12,7 @@
     @foreach (var item in Model.Facilities)
     {
         <li>
-            <a href="#">@item.Name</a> | <a href="/facility/edit/@(item.Id)">Edit</a> | <a href="/facility/delete/@(item.Id)">Delete</a>
+            <a href="/facility/@(item.Id)">@item.Name</a> | <a href="/facility/edit/@(item.Id)">Edit</a> | <a href="/facility/delete/@(item.Id)">Delete</a>
         </li>
     }
 </ul>

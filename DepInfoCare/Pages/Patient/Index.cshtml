@@ -1,0 +1,20 @@
+﻿@page
+@model DepInfoCare.Pages.Patient.IndexModel
+@{
+    ViewData["Title"] = "Patients";
+}
+
+<h1>
+    @(Model.Facility.Name) - Patients
+</h1>
+
+<ul>
+    @foreach (var item in Model.Patients)
+    {
+        <li>
+            <a href="#"><img src="@(item.ImageUrl)" width="64" height="64" />@item.FullName</a> | <a href="/facility/@(item.FacilityId)/edit/@(item.Id)">Edit</a> | <a class="delete-btn" href="/facility/@(item.FacilityId)/delete/@(item.Id)">Delete</a>
+        </li>
+    }
+</ul>
+
+<a href="/facility/@(Model.Facility.Id)/add">Add Patient</a>

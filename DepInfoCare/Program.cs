@@ -18,6 +18,12 @@ builder.Services
         options.Conventions.AddAreaPageRoute("Pages", "/Facility/Add", "/facility/add");
         options.Conventions.AddPageRoute("/Facility/Add", "/facility/edit/{id:int}");
         options.Conventions.AddPageRoute("/Facility/Delete", "/facility/delete/{id:int}");
+
+        // Patients
+        options.Conventions.AddPageRoute("/Patient/Index", "/facility/{facilityId:int}");
+        options.Conventions.AddPageRoute("/Patient/Add", "/facility/{facilityId:int}/add");
+        options.Conventions.AddPageRoute("/Patient/Add", "/facility/{facilityId:int}/edit/{patientId:int}");
+        options.Conventions.AddPageRoute("/Patient/Delete", "/facility/{facilityId:int}/delete/{patientId:int}");
     });
 
 builder.Services.AddDistributedMemoryCache();

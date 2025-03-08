@@ -6,10 +6,10 @@
         : "Add Facility";
 }
 
-@if (ViewBag.Message != null)
+@if (ViewData["Message"] != null)
 {
     <div>
-        @ViewBag.Message
+        @ViewData["Message"]
     </div>
 }
 
