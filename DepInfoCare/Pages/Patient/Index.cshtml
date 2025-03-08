@@ -12,7 +12,7 @@
     @foreach (var item in Model.Patients)
     {
         <li>
-            <a href="#"><img src="@(item.ImageUrl)" width="64" height="64" />@item.FullName</a> | <a href="/facility/@(item.FacilityId)/edit/@(item.Id)">Edit</a> | <a class="delete-btn" href="/facility/@(item.FacilityId)/delete/@(item.Id)">Delete</a>
+            <a href="/facility/@(Model.Facility.Id)/@(item.Id)"><img src="@(item.ImageUrl)" width="64" height="64" />@item.FullName</a> | <a href="/facility/@(item.FacilityId)/edit/@(item.Id)">Edit</a> | <a class="delete-btn" href="/facility/@(item.FacilityId)/delete/@(item.Id)">Delete</a>
         </li>
     }
 </ul>

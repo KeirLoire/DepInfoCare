@@ -1,0 +1,19 @@
+﻿@page
+@model DepInfoCare.Pages.Patient.DetailModel
+@{
+    ViewData["Title"] = Model.Patient.FullName;
+}
+
+<h1>
+    Patient - @(Model.Patient.FullName)
+</h1>
+
+<div>
+    <img src="@(Model.Patient.ImageUrl)" width="128" height="128" />
+    <div>
+        @Model.Patient.FullName
+    </div>
+    <div>
+        @Model.Patient.Room
+    </div>
+</div>
