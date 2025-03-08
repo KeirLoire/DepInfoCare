@@ -50,7 +50,7 @@ namespace DepInfoCare.Pages.Authentication
             HttpContext.Session.SetString("Username", user.Username);
             HttpContext.Session.SetString("Role", user.Role);
 
-            return RedirectToPage("Index");
+            return RedirectToPage("/Index");
         }
     }
 }
