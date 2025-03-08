@@ -1,4 +1,6 @@
 using DepInfoCare.Data;
+using DepInfoCare.Model;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -34,6 +36,20 @@ using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<DepInfoCareDbContext>();
     dbContext.Database.EnsureCreated();
+
+    if (!dbContext.Users.Any())
+    {
+        var passwordHasher = new PasswordHasher<User>();
+        var user = new User
+        {
+            Username = "admin",
+            Role = "Administrator"
+        };
+        user.PasswordHash = passwordHasher.HashPassword(user, "password");
+
+        dbContext.Users.Add(user);
+        dbContext.SaveChanges();
+    }
 }
 
 if (!app.Environment.IsDevelopment())
