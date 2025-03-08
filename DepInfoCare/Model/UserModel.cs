@@ -2,7 +2,7 @@
 
 namespace DepInfoCare.Model
 {
-    public sealed class User
+    public sealed class UserModel
     {
         [Key]
         public int Id { get; set; }

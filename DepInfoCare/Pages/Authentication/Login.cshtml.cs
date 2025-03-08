@@ -21,7 +21,7 @@ namespace DepInfoCare.Pages.Authentication
                 .Users
                 .FirstOrDefaultAsync(u => u.Username == username);
 
-            var passwordHasher = new PasswordHasher<User>();
+            var passwordHasher = new PasswordHasher<UserModel>();
             var result = passwordHasher.VerifyHashedPassword(user, user.PasswordHash, password);
 
             if (user == null || result == PasswordVerificationResult.Failed)

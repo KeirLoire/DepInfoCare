@@ -10,6 +10,7 @@ builder.Services.AddRazorPages()
     {
         options.Conventions.AddPageRoute("/Authentication/Login", "/login");
         options.Conventions.AddPageRoute("/Authentication/Logout", "/logout");
+        options.Conventions.AddPageRoute("/Facility/Index", "/facility");
     });
 
 builder.Services.AddDistributedMemoryCache();
@@ -40,8 +41,8 @@ using (var scope = app.Services.CreateScope())
 
     if (!dbContext.Users.Any())
     {
-        var passwordHasher = new PasswordHasher<User>();
-        var user = new User
+        var passwordHasher = new PasswordHasher<UserModel>();
+        var user = new UserModel
         {
             Username = "admin",
             Role = "Administrator"
