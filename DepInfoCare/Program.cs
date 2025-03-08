@@ -5,12 +5,16 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddRazorPages()
+builder.Services
+    .AddRazorPages()
     .AddRazorPagesOptions(options =>
     {
+        // Authentication
         options.Conventions.AddPageRoute("/Authentication/Login", "/login");
         options.Conventions.AddPageRoute("/Authentication/Logout", "/logout");
-        options.Conventions.AddPageRoute("/Facility/Index", "/facility");
+
+        // Facility
+        options.Conventions.AddAreaPageRoute("Pages", "/Facility/Index", "/facility");
     });
 
 builder.Services.AddDistributedMemoryCache();

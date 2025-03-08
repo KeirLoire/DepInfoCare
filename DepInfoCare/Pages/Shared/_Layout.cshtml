@@ -25,6 +25,9 @@
                         @if (User.Identity?.IsAuthenticated ?? false)
                         {
                             <li class="nav-item">
+                                <a class="nav-link text-dark" asp-page="/Facility/Index">Facilities</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link text-dark" asp-page="/Authentication/Logout">Logout</a>
                             </li>
                         }

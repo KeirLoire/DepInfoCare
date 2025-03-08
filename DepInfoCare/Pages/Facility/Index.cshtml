@@ -1,0 +1,14 @@
+﻿@page
+@model DepInfoCare.Pages.Facility.IndexModel
+@{
+    ViewData["Title"] = "Facilities";
+}
+
+<ul>
+    @foreach (var item in Model.Facilities)
+    {
+        <li>
+            <a href="#">@item.Name</a>
+        </li>
+    }
+</ul>

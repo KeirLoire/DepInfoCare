@@ -10,6 +10,7 @@ namespace DepInfoCare.Data
         }
 
         public DbSet<UserModel> Users { get; set; }
+        public DbSet<FacilityModel> Facilities { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
