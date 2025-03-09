@@ -25,6 +25,19 @@ namespace DepInfoCare.Pages.Patient
                 .Where(x => x.FacilityId == Facility.Id)
                 .ToListAsync();
 
+            Breadcrumb = new Breadcrumb
+            {
+                Title = Facility.Name,
+                Items = new()
+                {
+                    new BreadcrumbItem
+                    {
+                        Title = "Facilities",
+                        Url = $"/facility"
+                    }
+                }
+            };
+
             return Page();
         }
     }

@@ -10,6 +10,7 @@ $light-gray-2: #EEE !default;
 $light-gray-3: #BBB !default;
 $red: #F44336 !default;
 $black: #000 !default;
+$gray: #4F4F4F !default;
 
 // ==================================================================
 // Navigation bar
@@ -87,7 +88,7 @@ $black: #000 !default;
 
 .container {
     padding: 30px;
-    margin-top: 60px;
+    margin-top: 30px;
     text-align: center;
     background: $white;
     border-radius: 10px;
@@ -107,6 +108,7 @@ $black: #000 !default;
 }
 
 .button {
+    display: inline-block;
     padding: 10px 30px;
     text-decoration: none;
     background: $green;
@@ -257,6 +259,7 @@ $black: #000 !default;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-bottom: 20px;
     padding: 0;
     list-style: none;
 }
@@ -334,5 +337,88 @@ $black: #000 !default;
 }
 
 .facility__button {
+    @extend .button;
+}
+
+// ==================================================================
+// Patient - Listing
+// ==================================================================
+
+.patients__list {
+    @extend .facilities__list;
+}
+
+.patients__item {
+    @extend .facilities__item;
+}
+
+.patients__item__info {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    padding: 5px;
+    text-decoration: none;
+    text-align: left;
+    color: $black;
+    border-radius: 10px;
+    border: 2px solid $light-gray-2;
+
+    &:hover {
+        color: $white;
+        background: $light-green;
+
+        .patients__item__title {
+            color: $white;
+        }
+    }
+}
+
+.patients__item__image {
+    width: 46px;
+
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.patients__item__label {
+    height: min-content;
+}
+
+.patients__item__title {
+    height: min-content;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.patients__item__room {
+    font-size: 12px;
+    color: $gray;
+
+    span {
+        font-weight: bold;
+    }
+}
+
+.patients__item__actions {
+    @extend .facilities__item__actions;
+}
+
+.patients__item__button {
+    @extend .facilities__item__button;
+}
+
+.patients__item__button--edit {
+    @extend .facilities__item__button--edit;
+}
+
+.patients__item__button--delete {
+    @extend .facilities__item__button--delete;
+}
+
+.patients__button {
     @extend .button;
 }

@@ -4,17 +4,45 @@
     ViewData["Title"] = "Patients";
 }
 
-<h1>
-    @(Model.Facility.Name) - Patients
-</h1>
-
-<ul>
-    @foreach (var item in Model.Patients)
-    {
-        <li>
-            <a href="/facility/@(Model.Facility.Id)/@(item.Id)"><img src="@(item.ImageUrl)" width="64" height="64" />@item.FullName</a> | <a href="/facility/@(item.FacilityId)/edit/@(item.Id)">Edit</a> | <a class="delete-btn" href="/facility/@(item.FacilityId)/delete/@(item.Id)">Delete</a>
-        </li>
-    }
-</ul>
-
-<a href="/facility/@(Model.Facility.Id)/add">Add Patient</a>
+<div class="wrapper">
+    <div class="container">
+        <div class="container__title">
+            @ViewData["Title"]
+        </div>
+        <div class="patients__list">
+            @foreach (var item in Model.Patients)
+            {
+                <div class="patients__item">
+                    <a class="patients__item__info" href="/facility/@(Model.Facility.Id)/@(item.Id)">
+                        <div class="patients__item__image">
+                            <img src="@(string.IsNullOrWhiteSpace(item.ImageUrl) ? "/images/default-avatar.jpg" : item.ImageUrl)" alt="@item.FullName" />
+                        </div>
+                        <div class="patients__item__label">
+                            <div class="patients__item__title">
+                                @item.FullName
+                            </div>
+                            <div class="patients__item__room">
+                                <span>Room: </span>@item.Room
+                            </div>
+                        </div>
+                    </a> 
+                    <div class="patients__item__actions">
+                        <a class="patients__item__button patients__item__button--edit" href="/facility/@(item.FacilityId)/edit/@(item.Id)">
+                            <i class="bi bi-hammer"></i>
+                            <span>
+                                Edit
+                            </span>
+                        </a>
+                        <a class="patients__item__button patients__item__button--delete" href="/facility/@(item.FacilityId)/delete/@(item.Id)">
+                            <i class="bi bi-trash"></i>
+                            <span>
+                                Delete
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+        <a class="patients__button" href="/facility/@(Model.Facility.Id)/add">Add Patient</a>
+    </div>
+</div>

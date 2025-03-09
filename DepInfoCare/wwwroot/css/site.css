@@ -50,7 +50,7 @@
 
 .container {
   padding: 30px;
-  margin-top: 60px;
+  margin-top: 30px;
   text-align: center;
   background: #FFF;
   border-radius: 10px;
@@ -69,7 +69,8 @@
   color: #F44336;
 }
 
-.button, .facility__button, .facilities__button, .login__button {
+.button, .patients__button, .facility__button, .facilities__button, .login__button {
+  display: inline-block;
   padding: 10px 30px;
   text-decoration: none;
   background: #2E7D32;
@@ -77,7 +78,7 @@
   border-radius: 10px;
   border: none;
 }
-.button:hover, .facility__button:hover, .facilities__button:hover, .login__button:hover {
+.button:hover, .patients__button:hover, .facility__button:hover, .facilities__button:hover, .login__button:hover {
   color: #FFF;
   background: #4CAF50;
 }
@@ -184,15 +185,16 @@
   font-size: 20px;
 }
 
-.facilities__list {
+.facilities__list, .patients__list {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-bottom: 20px;
   padding: 0;
   list-style: none;
 }
 
-.facilities__item {
+.facilities__item, .patients__item {
   display: flex;
   gap: 5px;
 }
@@ -216,12 +218,12 @@
   color: #FFF;
 }
 
-.facilities__item__actions {
+.facilities__item__actions, .patients__item__actions {
   display: flex;
   gap: 5px;
 }
 
-.facilities__item__button {
+.facilities__item__button, .patients__item__button {
   display: flex;
   flex-direction: column;
   width: 60px;
@@ -232,15 +234,62 @@
   border: 2px solid #EEE;
   color: #FFF;
 }
-.facilities__item__button:hover {
+.facilities__item__button:hover, .patients__item__button:hover {
   color: #FFF;
   opacity: 0.8;
 }
 
-.facilities__item__button--edit {
+.facilities__item__button--edit, .patients__item__button--edit {
   background: #2E7D32;
 }
 
-.facilities__item__button--delete {
+.facilities__item__button--delete, .patients__item__button--delete {
   background: #F44336;
+}
+
+.patients__item__info {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+  padding: 5px;
+  text-decoration: none;
+  text-align: left;
+  color: #000;
+  border-radius: 10px;
+  border: 2px solid #EEE;
+}
+.patients__item__info:hover {
+  color: #FFF;
+  background: #4CAF50;
+}
+.patients__item__info:hover .patients__item__title {
+  color: #FFF;
+}
+
+.patients__item__image {
+  width: 46px;
+}
+.patients__item__image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.patients__item__label {
+  height: min-content;
+}
+
+.patients__item__title {
+  height: min-content;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.patients__item__room {
+  font-size: 12px;
+  color: #4F4F4F;
+}
+.patients__item__room span {
+  font-weight: bold;
 }
