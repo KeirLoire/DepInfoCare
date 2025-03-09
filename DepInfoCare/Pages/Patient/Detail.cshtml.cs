@@ -25,6 +25,24 @@ namespace DepInfoCare.Pages.Patient
             if (Patient == null)
                 return NotFound();
 
+            Breadcrumb = new Breadcrumb
+            {
+                Title = Patient.FullName,
+                Items = new()
+                {
+                    new BreadcrumbItem
+                    {
+                        Title = "Facilities",
+                        Url = "/facility"
+                    },
+                    new BreadcrumbItem
+                    {
+                        Title = Facility.Name,
+                        Url = $"/facility/{Facility.Id}"
+                    }
+                }
+            };
+
             return Page();
         }
     }
