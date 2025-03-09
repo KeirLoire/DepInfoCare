@@ -9,10 +9,10 @@
         <div class="container__title">
             Select a Facility
         </div>
-        <ul class="facilities__list">
+        <div class="facilities__list">
             @foreach (var item in Model.Facilities)
             {
-                <li class="facilities__item">
+                <div class="facilities__item">
                     <a class="facilities__item__title" href="/facility/@(item.Id)">
                         @item.Name
                     </a>
@@ -28,9 +28,9 @@
                             </span>
                         </a>
                     </div>
-                </li>
+                </div>
             }
-        </ul>
+        </div>
         <a class="facilities__button" href="/facility/add">
             Add Facility
         </a>
