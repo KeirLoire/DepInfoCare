@@ -332,11 +332,11 @@ $gray: #4F4F4F !default;
     @extend .form__group;
 }
 
-.facility__input {
+.facility__form__input {
     @extend .input;
 }
 
-.facility__button {
+.facility__form__button {
     @extend .button;
 }
 
@@ -420,5 +420,21 @@ $gray: #4F4F4F !default;
 }
 
 .patients__button {
+    @extend .button;
+}
+
+// ==================================================================
+// Patient - Add/Edit Form
+// ==================================================================
+
+.patient__form__group {
+    @extend .form__group;
+}
+
+.patient__form__input {
+    @extend .input;
+}
+
+.patient__form__button {
     @extend .button;
 }

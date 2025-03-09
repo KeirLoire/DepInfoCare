@@ -17,12 +17,12 @@
         }
         <form class="facility__form" method="post">
             <div class="facility__form__group">
-                <input class="input" type="text" name="name" placeholder="Name" value="@(Model.Facility != null ? Model.Facility.Name : null)" required />
+                <input class="facility__form__input" type="text" name="name" placeholder="Name" value="@(Model.Facility != null ? Model.Facility.Name : null)" required />
             </div>
             <div class="facility__form__group">
-                <input class="input" type="text" name="address" placeholder="Address" value="@(Model.Facility != null ? Model.Facility.Address : null)" />
+                <input class="facility__form__input" type="text" name="address" placeholder="Address" value="@(Model.Facility != null ? Model.Facility.Address : null)" />
             </div>
-            <button class="facility__button" type="submit">
+            <button class="facility__form__button" type="submit">
                 Submit
             </button>
         </form>

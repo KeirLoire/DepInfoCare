@@ -39,6 +39,26 @@ namespace DepInfoCare.Pages.Patient
             if (FormData == null)
                 return NotFound();
 
+            Breadcrumb = new Breadcrumb
+            {
+                Title = !string.IsNullOrWhiteSpace(FormData.FirstName)
+                    ? "Edit Patient"
+                    : "Add Patient",
+                Items = new()
+                {
+                    new BreadcrumbItem
+                    {
+                        Title = "Facilities",
+                        Url = "/facility"
+                    },
+                    new BreadcrumbItem
+                    {
+                        Title = Facility.Name,
+                        Url = $"/facility/{Facility.Id}"
+                    }
+                }
+            };
+
             return Page();
         }
 

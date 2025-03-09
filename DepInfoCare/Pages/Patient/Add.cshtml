@@ -1,43 +1,48 @@
 ﻿@page
 @model DepInfoCare.Pages.Patient.AddModel
 @{
-    ViewData["Title"] = $"{Model.Facility.Name} - Add Patient";
+    ViewData["Title"] = Model.Breadcrumb.Title;
 }
 
-<h1>
-    @(Model.Facility.Name) - Add Patient
-</h1>
-
-<form method="post" enctype="multipart/form-data">
-    <div>
-        <label>First Name: </label>
-        <input asp-for="FormData.FirstName" type="text" />
-        <span asp-validation-for="FormData.FirstName"></span>
+<div class="wrapper">
+    <div class="container">
+        <div class="container__title">
+            @ViewData["Title"]
+        </div>
+        @if (ViewData["Failed"] != null)
+        {
+            <div class="container__message">
+                Patient already exists
+            </div>
+        }
+        <form class="patient__form" method="post" enctype="multipart/form-data">
+            <div class="patient__form__group">
+                <input class="patient__form__input" asp-for="FormData.FirstName" type="text" placeholder="First name" required />
+                <span asp-validation-for="FormData.FirstName"></span>
+            </div>
+            <div class="patient__form__group">
+                <input class="patient__form__input" asp-for="FormData.MiddleName" type="text" placeholder="Middle name" />
+                <span asp-validation-for="FormData.MiddleName"></span>
+            </div>
+            <div class="patient__form__group">
+                <input class="patient__form__input" asp-for="FormData.LastName" type="text" placeholder="Last name" required />
+                <span asp-validation-for="FormData.LastName"></span>
+            </div>
+            <div class="patient__form__group">
+                <input class="patient__form__input" asp-for="FormData.Suffix" type="text" placeholder="Suffix (Jr., Sr., III)" />
+                <span asp-validation-for="FormData.Suffix"></span>
+            </div>
+            <div class="patient__form__group">
+                <input class="patient__form__input" asp-for="FormData.Room" type="text" placeholder="Room" />
+                <span asp-validation-for="FormData.Room"></span>
+            </div>
+            <div class="patient__form__group">
+                <input class="patient__form__input" asp-for="FormData.ImageFile" type="file" accept="image/*" placeholder="Patient photo" />
+                <span asp-validation-for="FormData.ImageFile"></span>
+            </div>
+            <button class="patient__form__button" type="submit">
+                Submit
+            </button>
+        </form>
     </div>
-    <div>
-        <label>Middle Name: </label>
-        <input asp-for="FormData.MiddleName" type="text" />
-        <span asp-validation-for="FormData.MiddleName"></span>
-    </div>
-    <div>
-        <label>Last Name: </label>
-        <input asp-for="FormData.LastName" type="text" />
-        <span asp-validation-for="FormData.LastName"></span>
-    </div>
-    <div>
-        <label>Suffix: </label>
-        <input asp-for="FormData.Suffix" type="text" />
-        <span asp-validation-for="FormData.Suffix"></span>
-    </div>
-    <div>
-        <label>Room: </label>
-        <input asp-for="FormData.Room" type="text" />
-        <span asp-validation-for="FormData.Room"></span>
-    </div>
-    <div>
-        <label>Image: </label>
-        <input asp-for="FormData.ImageFile" type="file" accept="image/*" />
-        <span asp-validation-for="FormData.ImageFile"></span>
-    </div>
-    <button type="submit">Submit</button>
-</form>
+</div>

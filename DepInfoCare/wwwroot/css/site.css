@@ -69,7 +69,7 @@
   color: #F44336;
 }
 
-.button, .patients__button, .facility__button, .facilities__button, .login__button {
+.button, .patient__form__button, .patients__button, .facility__form__button, .facilities__button, .login__button {
   display: inline-block;
   padding: 10px 30px;
   text-decoration: none;
@@ -78,19 +78,19 @@
   border-radius: 10px;
   border: none;
 }
-.button:hover, .patients__button:hover, .facility__button:hover, .facilities__button:hover, .login__button:hover {
+.button:hover, .patient__form__button:hover, .patients__button:hover, .facility__form__button:hover, .facilities__button:hover, .login__button:hover {
   color: #FFF;
   background: #4CAF50;
 }
 
-.input, .facility__input, .login__input {
+.input, .patient__form__input, .facility__form__input, .login__input {
   padding: 10px 10px;
   width: 100%;
   border-radius: 10px;
   border: 2px solid #EEE;
 }
 
-.form__group, .facility__form__group, .login__form__group {
+.form__group, .patient__form__group, .facility__form__group, .login__form__group {
   display: flex;
   margin-bottom: 10px;
   justify-content: center;
